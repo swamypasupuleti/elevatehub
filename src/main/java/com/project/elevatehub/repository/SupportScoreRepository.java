@@ -1,6 +1,7 @@
 package com.project.elevatehub.repository;
 
-import com.project.elevatehub.model.entities.Users;
+
+import com.project.elevatehub.model.entities.SupportScore;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -9,9 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public interface UsersRepository extends JpaRepository<Users, Long> {
+public interface SupportScoreRepository extends JpaRepository<SupportScore, Long> {
 
-    @Query("select u from Users u where u.employeeId = :employeeId")
-    Users findByUserName(@Param(value = "employeeId") String employeeId);
+    @Query("select s from SupportScore s where s.email = :email")
+    SupportScore findByEmail(@Param(value = "email") String email);
 
 }
