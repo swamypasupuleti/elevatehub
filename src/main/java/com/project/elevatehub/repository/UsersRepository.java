@@ -11,7 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface UsersRepository extends JpaRepository<Users, Long> {
 
-    @Query("select u from Users u where u.employeeId = :employeeId")
-    Users findByUserName(@Param(value = "employeeId") String employeeId);
+    @Query("select u from Users u where u.employeeId = :employeeId and u.password = :password")
+    Users findByUserNameAndPassword(@Param(value = "employeeId") String employeeId,
+                                    @Param(value = "password") String password);
 
 }
