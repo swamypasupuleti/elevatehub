@@ -1,6 +1,6 @@
 package com.project.elevatehub.repository;
 
-import com.project.elevatehub.model.entities.Users;
+import com.project.elevatehub.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

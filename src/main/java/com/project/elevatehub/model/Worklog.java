@@ -1,4 +1,4 @@
-package com.project.elevatehub.model.entities;
+package com.project.elevatehub.model;
 
 import java.time.Instant;
 
@@ -18,9 +18,8 @@ public class Worklog {
   private Long id;
 
   @NotNull
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "employeeId", nullable = false, referencedColumnName = "employeeId")
-  private Users employee;
+  @Column(name = "employee_id", nullable = false)
+  private String employeeId;
 
   @NotNull
   @Column(name = "timespent", nullable = false)

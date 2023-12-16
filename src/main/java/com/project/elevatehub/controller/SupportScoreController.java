@@ -1,6 +1,6 @@
 package com.project.elevatehub.controller;
 
-import com.project.elevatehub.model.entities.SupportScore;
+import com.project.elevatehub.model.SupportScore;
 import com.project.elevatehub.service.SupportScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

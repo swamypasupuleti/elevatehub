@@ -1,4 +1,4 @@
-package com.project.elevatehub.model.entities;
+package com.project.elevatehub.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -51,4 +51,7 @@ public class Timesheet {
   @NotNull
   @Column(name = "comment", nullable = false, length = 100)
   private String comment;
+
+  @Column(name="employee_id")
+  private String employeeId;
 }

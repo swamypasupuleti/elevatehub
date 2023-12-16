@@ -1,4 +1,4 @@
-package com.project.elevatehub.model.entities;
+package com.project.elevatehub.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -17,9 +17,8 @@ public class SupportScore {
   private Long id;
 
   @NotNull
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "employeeId", nullable = false, referencedColumnName = "employeeId")
-  private Users employee;
+  @Column(name = "employee_id", nullable = false)
+  private String employeeId;
 
   @Size(max = 255)
   @Column(name = "email")

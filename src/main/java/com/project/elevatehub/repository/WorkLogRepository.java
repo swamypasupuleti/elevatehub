@@ -1,8 +1,8 @@
 package com.project.elevatehub.repository;
 
 
-import com.project.elevatehub.model.entities.SupportScore;
-import com.project.elevatehub.model.entities.Worklog;
+import com.project.elevatehub.model.SupportScore;
+import com.project.elevatehub.model.Worklog;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

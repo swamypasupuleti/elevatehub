@@ -1,6 +1,6 @@
 package com.project.elevatehub.service;
 
-import com.project.elevatehub.model.entities.SupportScore;
+import com.project.elevatehub.model.SupportScore;
 
 public interface SupportScoreService {
 

@@ -1,6 +1,6 @@
 package com.project.elevatehub.config;
 
-import com.project.elevatehub.model.entities.Users;
+import com.project.elevatehub.model.Users;
 import com.project.elevatehub.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

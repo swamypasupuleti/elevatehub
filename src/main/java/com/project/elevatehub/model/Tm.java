@@ -1,4 +1,4 @@
-package com.project.elevatehub.model.entities;
+package com.project.elevatehub.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

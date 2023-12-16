@@ -1,4 +1,4 @@
-package com.project.elevatehub.model.entities;
+package com.project.elevatehub.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
