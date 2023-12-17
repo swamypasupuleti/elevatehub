@@ -1,11 +1,10 @@
 package com.project.elevatehub.service;
 
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 
-import java.util.List;
+import java.util.Map;
 
 public interface UserService {
 
-     List<Object> getVelocityByFilterType(String type);
+     Map<String, Object> getVelocityByFilterType(String type, String employeeId, String projectCode);
 
 }

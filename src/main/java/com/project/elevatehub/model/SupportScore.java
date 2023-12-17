@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Size;
 import java.time.Instant;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @Setter
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Table(name = "support_score", schema = "elevatehub")
 public class SupportScore {
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
   private Long id;
 
@@ -41,10 +43,17 @@ public class SupportScore {
   @Column(name = "modified_at")
   private Instant modifiedAt;
 
+  @CreationTimestamp
   @Column(name = "created_at")
+
   private Instant createdAt;
 
-  @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "id")
-  private Badges badges;
+
+  @Column(name = "nominated_user")
+  private String nominatedUser;
+
+  @Column(name="badge_id")
+  private Integer badgeId;
+
+
 }

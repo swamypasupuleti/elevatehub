@@ -14,6 +14,7 @@ import lombok.Setter;
 @Table(name = "worklog", schema = "elevatehub")
 public class Worklog {
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
   private Long id;
 
@@ -32,4 +33,7 @@ public class Worklog {
 
   @Column(name = "created_at")
   private Instant createdAt;
+
+  @Column(name = "project_code")
+  private String projectCode;
 }

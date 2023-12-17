@@ -1,14 +1,13 @@
 package com.project.elevatehub.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Date;
 
 @Getter
 @Setter
@@ -16,6 +15,7 @@ import lombok.Setter;
 @Table(name = "ter", schema = "elevatehub")
 public class Timesheet {
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
   private Long id;
 
@@ -54,4 +54,7 @@ public class Timesheet {
 
   @Column(name="employee_id")
   private String employeeId;
+
+  @Column(name="created_at")
+  private Date createdAt;
 }

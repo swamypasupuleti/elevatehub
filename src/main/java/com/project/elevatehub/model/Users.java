@@ -1,9 +1,6 @@
 package com.project.elevatehub.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.time.Instant;
@@ -17,6 +14,7 @@ import lombok.Setter;
 public class Users {
   @Id
   @Size(max = 10)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "employee_id", nullable = false, length = 10)
   private String employeeId;
 

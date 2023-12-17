@@ -2,9 +2,8 @@ package com.project.elevatehub.repository;
 
 
 import com.project.elevatehub.model.SupportScore;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface SupportScoreRepository extends JpaRepository<SupportScore, Long> {
 
-    @Query("select s from SupportScore s where s.email = :email")
-    SupportScore findByEmail(@Param(value = "email") String email);
+    List<SupportScore> findByEmail(String email);
 
 }

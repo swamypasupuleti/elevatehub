@@ -1,17 +1,14 @@
 package com.project.elevatehub.service.impl;
 
-import com.project.elevatehub.repository.UsersRepository;
+import static com.project.elevatehub.constants.FileConstants.*;
+
+import com.project.elevatehub.repository.TerRepository;
+import com.project.elevatehub.repository.UntrackedHoursRepository;
 import com.project.elevatehub.repository.WorkLogRepository;
 import com.project.elevatehub.service.UserService;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import static com.project.elevatehub.constants.FileConstants.*;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -19,18 +16,24 @@ public class UserServiceImpl implements UserService {
     @Autowired
     WorkLogRepository workLogRepository;
 
-    public  List<Object> getVelocityByFilterType(String type){
-     //JSONObject velocityObj = new JSONObject();
 
-        List<Object> list = new ArrayList<>();
-        switch(type){
-            case CURRENT_MONTH: list =  workLogRepository.getCurrentMonthWorkLog(type);
-                break;
-//            case PREVIOUS_MONTH: list =  workLogRepository.getPreviousMonthWorkLog(new Date());
-//                break;
-//            case CURRENT_YEAR: list =  workLogRepository.getPreviousYearWorkLog(new Date());
-//                break;
-        }
-        return list;
+    @Autowired
+    TerRepository terRepository;
+
+    @Autowired
+    UntrackedHoursRepository untrackedHoursRepository;
+
+    public Map<String, Object> getVelocityByFilterType(String type, String employeeId, String projectCode){
+        Map<String, Object> map = new HashMap<String, Object>();
+        Integer interval = type.equals(LAST_15_DAYS) ? 15
+                :type.equals(LAST_30_DAYS) ? 30 :60;
+        List<Object> worklog =  workLogRepository.getWorkLogByInterval(employeeId, projectCode,interval);
+        List<Object> timesheet =  terRepository.getWorkLogByInterval(employeeId, projectCode,interval);
+        List<Object> untrackedHours =  untrackedHoursRepository.getUntrackedHoursByInterval(employeeId,interval);
+
+        map.put("worklog",worklog);
+        map.put("timesheet",timesheet);
+        map.put("untrackedHours",untrackedHours);
+        return map;
     }
 }

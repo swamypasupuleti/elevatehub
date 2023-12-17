@@ -18,8 +18,8 @@ public final class FileConstants {
     public static final String ADMIN_PROFILE = "adminProfile";
     public static final String PRODUCT_OFFER = "productOffer";
     public static final String TOKEN_BATCHES = "tokenBatches";
-    public static final String CURRENT_MONTH = "currentMonth";
-    public static final String PREVIOUS_MONTH = "previousMonth";
-    public static final String CURRENT_YEAR = "currentYear";
+    public static final String LAST_15_DAYS = "last15Days";
+    public static final String LAST_30_DAYS = "last30Days";
+    public static final String LAST_2_MONTHS = "last2Months";
     
 }

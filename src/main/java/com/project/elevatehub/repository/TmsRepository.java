@@ -15,5 +15,4 @@ public interface TmsRepository extends JpaRepository<Tm, Long> {
 
     @Query("select s from SupportScore s where s.email = :email")
     SupportScore findByEmail(@Param(value = "email") String email);
-
 }

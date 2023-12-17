@@ -6,6 +6,8 @@ import com.project.elevatehub.service.SupportScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SupportScoreServiceImpl implements SupportScoreService {
 
@@ -14,7 +16,7 @@ public class SupportScoreServiceImpl implements SupportScoreService {
     SupportScoreRepository scoreRepository;
 
     @Override
-    public SupportScore findByEmail(String email) {
+    public List<SupportScore> findByEmail(String email) {
 
         return scoreRepository.findByEmail(email);
     }

@@ -11,6 +11,7 @@ import lombok.Setter;
 @Table(name = "worklog", schema = "elevatehub")
 public class Badges {
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
   private Long id;
 
